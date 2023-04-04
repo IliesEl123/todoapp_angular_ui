@@ -1,27 +1,24 @@
-# TodoappFrontend
+# ToDoApp - Partie Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+Ce projet a été créé avec Angular et permet de gérer une liste de tâches. Il est connecté à un backend en Spring pour stocker les tâches dans une base de données MySQL.
 
-## Development server
+La partie Spring : https://github.com/IliesEl123/todoapp_spring
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+##  Installation
 
-## Code scaffolding
+Pour installer le projet, suivez les étapes ci-dessous :
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Cloner le dépôt Git en utilisant la commande suivante : git clone https://github.com/IliesEl123/todoapp_angular_ui
+2. Naviguez jusqu'au dossier du projet en utilisant la commande : cd todoapp_angular_ui
+3. Installez les dépendances du projet en exécutant la commande suivante : npm install
 
-## Build
+## Utilisation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Pour lancer le projet, utilisez la commande suivante : ng serve. Cela lancera l'application sur le port 4200. Vous pouvez accéder à l'application en ouvrant un navigateur web et en visitant l'adresse http://localhost:4200/.
 
-## Running unit tests
+## Fonctionnalités
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Ajouter une tâche
+- Supprimer une tâche
+- Supprimer toutes les tâches
+- Afficher la liste des tâches
