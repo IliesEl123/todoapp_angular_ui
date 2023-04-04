@@ -1,0 +1,33 @@
+
+<div class="container">           
+  <time id="hour">{{ today | date: 'HH:mm' }}</time>
+  <time id="date"> {{ today | date: 'EEEE dd / MM / y' }}</time>
+  
+  <h1>Liste de tâches à faire</h1>
+  <!-- Formulaire pour ajouter une tâche -->
+  <form class="form" (ngSubmit)="addTask(title.value, title)" >
+    <input #title type="text"  id="task" placeholder="Ajouter une tâche" (input)="updateIsEmpty($event)">
+    <input type="image"   id="btn-add-task" src="../../../assets/icon-ajouter.svg" alt="icone-ajouter" [disabled]="isEmpty" [style.opacity]="isEmpty ? 0.5 : 1">
+  </form>
+  <!-- Liste des tâches à faire -->
+  <ul *ngFor="let task of tasks" id="task-list">
+    <li>
+      {{task.title}}
+      <img src="../../../assets/icon-poubelle.svg" alt="" (click)="deleteTask(task.id)">
+    </li>
+  </ul>
+  <!-- Bouton pour supprimer toutes les tâches -->
+  <button class="btn-all-delete" id="btn-all-delete" (click)="deleteAllTask()">Tout Supprimer</button>
+  
+  <!-- Modal de confirmation de suppression de toutes les tâches -->
+  <div class="modal" *ngIf="modalOpen">
+    <div class="modal-content">
+      <h2>Confirmation de suppression</h2>
+      <p>Voulez-vous vraiment supprimer toutes les tâches ?</p>
+      <div class="modal-buttons">
+        <button (click)="modalOpen = false">Annuler</button>
+        <button (click)="deleteAllTasksConfirmed()">OK</button>
+      </div>
+    </div>
+  </div>
+

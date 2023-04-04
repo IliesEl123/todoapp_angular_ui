@@ -1,0 +1,188 @@
+/*Réinitialisation des styles de base pour tous les éléments*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*Style global du corps de la page*/
+body {
+  font-family: "Roboto", sans-serif;
+  background: rgb(241,245,248);
+  line-height: 1.5;
+}
+
+/*Style du titre principal*/
+h1 {
+  margin: 5%;
+  font-family: 'Great Vibes', cursive;
+  font-weight: bold;
+  text-align: center;
+  font-size: 44.8px;
+  color: #c59d5f;
+}
+
+/*Style de la zone de contenu principale*/
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center; 
+}
+
+/*Style du formulaire*/
+.form {
+  position: relative; 
+}
+
+/*Style de l'affichage de la date*/
+#date {
+  font-family: "Roboto", sans-serif;
+  color: hsl(210, 22%, 49%);
+  font-size: 1.3em;
+  width: 180px;
+  opacity: 0.5; 
+}
+
+/*Style de l'affichage de l'heure*/
+#hour {
+  font-family: "Roboto", sans-serif;
+  color: hsl(210, 22%, 49%);
+  font-size: 50px;
+  margin: auto;
+  width: 180px;
+  display: block;
+  opacity: 0.5; 
+}
+
+/*Style de la zone de saisie des tâches*/
+#task {
+  max-width: 600px;
+  width: 100%;
+  height: 70px;
+  border-radius: 8px;
+  color: black;
+  border: 0;
+  outline: 0;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+/*Style du bouton d'ajout de tâche*/
+#btn-add-task {
+  position: absolute;
+  right: 2px;
+  top: 11px;
+  width: 48px;
+  height: 48px;
+  outline: 0; 
+}
+
+/*Style du texte des tâches*/
+li {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: hsl(210, 22%, 49%);
+  list-style: none;
+  border-radius: 8px;
+  padding:  10px;
+  margin-left: -39px; 
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 7px;
+  position: relative;
+  overflow: hidden; 
+  overflow-wrap: break-word; 
+  white-space: pre-wrap;
+}
+
+/*Style de l'icône de suppression des tâches*/
+img {
+  position: absolute;
+  right: -45px;
+  cursor: pointer;   
+}
+
+/*Lorsque la souris est sur la liste de tâches, l'image d'icône de suppression apparaît à droite de la tâche avec une transition douce*/
+li:hover img{
+  right: 0px; 
+  transition: all 0.3s ease-out; 
+}
+
+/*Bouton de suppression globale de toutes les tâches ajoutées avec une animation de transition fluide lorsqu'il est survolé*/
+.btn-all-delete{
+  margin: 0 auto;
+  display: block; 
+  margin-top: 45px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  outline: 0;
+  font-weight: 700;
+  color:  #c59d5f;
+  background-color: rgb(241,245,248);
+  cursor: pointer;
+  font-size: 16px;
+  border: 2px solid #c59d5f;
+  transition: all .4s linear;
+}
+
+.btn-all-delete:hover{
+  background-color: hsl(209, 11%, 46%); 
+}
+
+/*Modifie la taille maximale de la tâche pour qu'elle soit à 100% de la largeur de l'écran lorsque le viewport est de 610px ou moins*/
+@media all and (max-width: 610px){
+  .task{
+      max-width: 100%;
+  }
+}
+
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+/*Stylisation de la fenêtre modale (popup) qui apparaît lors de la suppression d'une tâche avec les boutons stylisés */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  margin: auto;
+  padding: 20px;
+  background-color: #F1F5F8;
+  border-radius: 5px;
+  text-align: center;
+  width: 50%;
+  height: 20%;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.modal button {
+  padding: 10px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  background-color: #C59D5F;
+  color: white;
+  border: none;
+}
+
+.modal button:hover {
+  background-color: #0b7dda;
+}
